@@ -31,6 +31,10 @@ public:
 
     void run();
 
+    void addReadEvent(int fd, Connection* conn);
+
+    void addWriteEvent(int fd, Connection* conn);
+
 private:
     EventLoop(const EventLoop&);
 

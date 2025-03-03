@@ -70,3 +70,19 @@ void EventLoop::run() {
         }
     }
 }
+
+void EventLoop::addReadEvent(int fd, Connection* conn) {
+    Kevent ev;
+
+    EV_SET(&ev, fd, EVFILT_READ, EV_ADD, 0, 0, conn);
+    _changeList.push_back(ev);
+    _connections[fd] = conn;
+}
+
+void EventLoop::addWriteEvent(int fd, Connection* conn) {
+    Kevent ev;
+
+    EV_SET(&ev, fd, EVFILT_WRITE, EV_ADD, 0, 0, conn);
+    _changeList.push_back(ev);
+    _connections[fd] = conn;
+}
