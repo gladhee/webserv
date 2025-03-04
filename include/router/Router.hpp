@@ -8,15 +8,17 @@
 #include <string>
 #include <vector>
 
+#include "Location.hpp"
+
 class Router {
 private:
-    int const port;
-    int const host;
-    std::string const serverName;
-    std::string const errorPage;
-    long const clientMaxBodySize;
-    std::string const root;
-    std::vector<Location*> const locations;
+    int const _port;
+    int const _host;
+    std::string const _serverName;
+    std::string const _errorPage;
+    long const _clientMaxBodySize;
+    std::string const _root;
+    std::vector<Location*> const _locations;
 
 public:
     Router(int port, int host, const std::string& serverName, const std::string& errorPage,
