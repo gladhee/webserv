@@ -4,8 +4,8 @@
 
 #include "ServerConnection.hpp"
 
-ServerConnection::ServerConnection(EventLoop* eventLoop)
-		:eventLoop(eventLoop) {
+ServerConnection::ServerConnection(EventLoop* eventLoop, Router router)
+		:eventLoop(eventLoop), router(router) {
 }
 
 ServerConnection::ServerConnection(ServerConnection const&) {

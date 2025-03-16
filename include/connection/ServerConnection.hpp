@@ -15,14 +15,16 @@
 #include "ClientConnection.hpp"
 #include "Connection.hpp"
 #include "EventLoop.hpp"
+#include "Router.hpp"
 
 class ServerConnection : public Connection {
 private:
 	EventLoop* eventLoop;
+	Router router;
 	int _fd;
 
 public:
-	ServerConnection(EventLoop* eventLoop);
+	ServerConnection(EventLoop* eventLoop, Router router);
 	~ServerConnection();
 
 	virtual void onRead();
@@ -31,6 +33,7 @@ public:
 	virtual void onClose();
 
 private:
+	ServerConnection();
 	ServerConnection(ServerConnection const&);
 	ServerConnection& operator=(ServerConnection const&);
 };

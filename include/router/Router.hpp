@@ -21,15 +21,14 @@ private:
 	std::vector<Location*> const _locations;
 
 public:
+	Router();
 	Router(int port, int host, std::string const& serverName, std::string const& errorPage,
 			long clientMaxBodySize, std::string const& root,
 			std::vector<Location*> const& locations);
-
+	Router(Router const&);
 	~Router();
 
 private:
-	Router();
-	Router(Router const&);
 	Router& operator=(Router const&);
 };
 

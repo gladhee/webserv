@@ -19,8 +19,14 @@ Router::Router(int port, int host, std::string const& serverName, std::string co
 		 _locations(locations) {
 }
 
-Router::Router(Router const&)
-		:_clientMaxBodySize(0), _host(0), _port(0) {
+Router::Router(Router const& rhs)
+		:_port(rhs._port),
+		 _host(rhs._host),
+		 _serverName(rhs._serverName),
+		 _errorPage(rhs._errorPage),
+		 _clientMaxBodySize(rhs._clientMaxBodySize),
+		 _root(rhs._root),
+		 _locations(rhs._locations) {
 }
 
 Router& Router::operator=(Router const&) {
