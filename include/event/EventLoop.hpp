@@ -26,18 +26,14 @@ private:
 
 public:
 	EventLoop();
-
 	~EventLoop();
 
 	void run();
-
 	void addReadEvent(int fd, Connection* conn);
-
 	void addWriteEvent(int fd, Connection* conn);
 
 private:
 	EventLoop(EventLoop const&);
-
 	EventLoop& operator=(EventLoop const&);
 };
 
