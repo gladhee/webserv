@@ -10,8 +10,8 @@
 class Location {
 
 public:
-    virtual bool canHandleRequest(std::string const& uri) const = 0;
-    virtual int handleRequest(std::string const& uri) const = 0;
+	virtual bool canHandleRequest(std::string const& uri) const = 0;
+	virtual int handleRequest(std::string const& uri) const = 0;
 
 };
 

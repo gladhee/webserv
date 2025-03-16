@@ -19,26 +19,26 @@ typedef struct kevent Kevent;
 
 class EventLoop {
 private:
-    static int const MAX_EVENTS = 32;
-    int _kq;
-    std::vector<Kevent> _changeList;
-    std::map<int, Connection*> _connections;
+	static int const MAX_EVENTS = 32;
+	int _kq;
+	std::vector<Kevent> _changeList;
+	std::map<int, Connection*> _connections;
 
 public:
-    EventLoop();
+	EventLoop();
 
-    ~EventLoop();
+	~EventLoop();
 
-    void run();
+	void run();
 
-    void addReadEvent(int fd, Connection* conn);
+	void addReadEvent(int fd, Connection* conn);
 
-    void addWriteEvent(int fd, Connection* conn);
+	void addWriteEvent(int fd, Connection* conn);
 
 private:
-    EventLoop(const EventLoop&);
+	EventLoop(const EventLoop&);
 
-    EventLoop& operator=(const EventLoop&);
+	EventLoop& operator=(const EventLoop&);
 };
 
 #endif  // WEBSERV_EVENTLOOP_HPP

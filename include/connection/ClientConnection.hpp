@@ -15,24 +15,24 @@
 
 class ClientConnection : public Connection {
 private:
-    int _clientFd;
-    EventLoop* eventLoop;
-    std::string _readBuffer;
-    std::string _writeBuffer;
+	int _clientFd;
+	EventLoop* eventLoop;
+	std::string _readBuffer;
+	std::string _writeBuffer;
 
 public:
-    ClientConnection(int fd, EventLoop* ev);
-    ~ClientConnection();
+	ClientConnection(int fd, EventLoop* ev);
+	~ClientConnection();
 
-    virtual void onRead();
-    virtual void onWrite();
-    virtual void onError();
-    virtual void onClose();
+	virtual void onRead();
+	virtual void onWrite();
+	virtual void onError();
+	virtual void onClose();
 
 private:
-    ClientConnection();
-    ClientConnection(ClientConnection const&);
-    ClientConnection& operator=(ClientConnection const&);
+	ClientConnection();
+	ClientConnection(ClientConnection const&);
+	ClientConnection& operator=(ClientConnection const&);
 };
 
 #endif  // WEBSERV_CLIENTCONNECTION_HPP

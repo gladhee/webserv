@@ -4,32 +4,33 @@
 
 #include "ServerConnection.hpp"
 
-ServerConnection::ServerConnection(EventLoop *eventLoop) : eventLoop(eventLoop) {
+ServerConnection::ServerConnection(EventLoop* eventLoop)
+		:eventLoop(eventLoop) {
 }
 
-ServerConnection::ServerConnection(const ServerConnection &) {
+ServerConnection::ServerConnection(const ServerConnection&) {
 }
 
-ServerConnection &ServerConnection::operator=(ServerConnection const &) {
-    return *this;
+ServerConnection& ServerConnection::operator=(ServerConnection const&) {
+	return *this;
 }
 
 ServerConnection::~ServerConnection() {
 }
 
 void ServerConnection::onRead() {
-    while ( true ) {
-        int clientFd = accept(_fd, NULL, NULL);
+	while (true) {
+		int clientFd = accept(_fd, NULL, NULL);
 
-        if ( clientFd < 0 ) {
-            break;
-        }
+		if (clientFd < 0) {
+			break;
+		}
 
-        fcntl(clientFd, F_SETFL, O_NONBLOCK);
-        Connection *conn = new ClientConnection(clientFd, eventLoop);
-        eventLoop->addReadEvent(clientFd, conn);
-        eventLoop->addWriteEvent(clientFd, conn);
+		fcntl(clientFd, F_SETFL, O_NONBLOCK);
+		Connection* conn = new ClientConnection(clientFd, eventLoop);
+		eventLoop->addReadEvent(clientFd, conn);
+		eventLoop->addWriteEvent(clientFd, conn);
 
-        std::cout << clientFd << " connected" << std::endl;
-    }
+		std::cout << clientFd << " connected" << std::endl;
+	}
 }

@@ -8,7 +8,8 @@
 class Connection {
 
 public:
-	virtual ~Connection() {};
+	virtual ~Connection() {
+	};
 	virtual void onRead() = 0;
 	virtual void onWrite() = 0;
 	virtual void onError() = 0;

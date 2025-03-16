@@ -18,21 +18,21 @@
 
 class ServerConnection : public Connection {
 private:
-    EventLoop* eventLoop;
-    int _fd;
+	EventLoop* eventLoop;
+	int _fd;
 
 public:
-    ServerConnection(EventLoop* eventLoop);
-    ~ServerConnection();
+	ServerConnection(EventLoop* eventLoop);
+	~ServerConnection();
 
-    virtual void onRead();
-    virtual void onWrite();
-    virtual void onError();
-    virtual void onClose();
+	virtual void onRead();
+	virtual void onWrite();
+	virtual void onError();
+	virtual void onClose();
 
 private:
-    ServerConnection(ServerConnection const&);
-    ServerConnection& operator=(ServerConnection const&);
+	ServerConnection(ServerConnection const&);
+	ServerConnection& operator=(ServerConnection const&);
 };
 
 #endif  // WEBSERV_SERVERCONNECTION_HPP

@@ -13,26 +13,26 @@
 
 class StaticLocation : public Location {
 private:
-    std::string const _uri;
-    std::string const _root;
-    std::string const _index;
-    std::string const _errorPage;
-    std::vector<Method> const _allowedMethods;
-    bool const _autoindex;
+	std::string const _uri;
+	std::string const _root;
+	std::string const _index;
+	std::string const _errorPage;
+	std::vector<Method> const _allowedMethods;
+	bool const _autoindex;
 
 public:
-    StaticLocation(std::string const& uri, std::string const& root, std::string const& index,
-                   std::string const& errorPage, std::vector<Method> const& allowedMethods);
+	StaticLocation(std::string const& uri, std::string const& root, std::string const& index,
+			std::string const& errorPage, std::vector<Method> const& allowedMethods);
 
-    bool canHandleRequest(std::string const& uri) const;
-    int handleRequest(std::string const& uri) const;
+	bool canHandleRequest(std::string const& uri) const;
+	int handleRequest(std::string const& uri) const;
 
-    ~StaticLocation();
+	~StaticLocation();
 
 private:
-    StaticLocation();
-    StaticLocation(StaticLocation const&);
-    StaticLocation& operator=(StaticLocation const&);
+	StaticLocation();
+	StaticLocation(StaticLocation const&);
+	StaticLocation& operator=(StaticLocation const&);
 };
 
 #endif  // WEBSERV_STATICLOCATION_HPP

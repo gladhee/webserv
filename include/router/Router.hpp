@@ -12,25 +12,25 @@
 
 class Router {
 private:
-    int const _port;
-    int const _host;
-    std::string const _serverName;
-    std::string const _errorPage;
-    long const _clientMaxBodySize;
-    std::string const _root;
-    std::vector<Location*> const _locations;
+	int const _port;
+	int const _host;
+	std::string const _serverName;
+	std::string const _errorPage;
+	long const _clientMaxBodySize;
+	std::string const _root;
+	std::vector<Location*> const _locations;
 
 public:
-    Router(int port, int host, const std::string& serverName, const std::string& errorPage,
-           long clientMaxBodySize, const std::string& root,
-           const std::vector<Location*>& locations);
+	Router(int port, int host, const std::string& serverName, const std::string& errorPage,
+			long clientMaxBodySize, const std::string& root,
+			const std::vector<Location*>& locations);
 
-    ~Router();
+	~Router();
 
 private:
-    Router();
-    Router(Router const&);
-    Router& operator=(Router const&);
+	Router();
+	Router(Router const&);
+	Router& operator=(Router const&);
 };
 
 #endif  // WEBSERV_ROUTER_HPP

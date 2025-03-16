@@ -6,9 +6,9 @@
 #define WEBSERV_METHOD_HPP
 
 enum Method {
-    GET,
-    POST,
-    DELETE,
+	GET,
+	POST,
+	DELETE,
 };
 
 #endif  // WEBSERV_METHOD_HPP
