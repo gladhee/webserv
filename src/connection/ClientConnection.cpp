@@ -12,7 +12,7 @@ ClientConnection::ClientConnection(int fd, EventLoop* ev)
 	fcntl(_clientFd, F_SETFL, O_NONBLOCK);
 }
 
-ClientConnection::ClientConnection(const ClientConnection&) {
+ClientConnection::ClientConnection(ClientConnection const&) {
 }
 
 ClientConnection& ClientConnection::operator=(ClientConnection const&) {

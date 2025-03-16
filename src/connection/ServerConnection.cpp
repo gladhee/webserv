@@ -8,7 +8,7 @@ ServerConnection::ServerConnection(EventLoop* eventLoop)
 		:eventLoop(eventLoop) {
 }
 
-ServerConnection::ServerConnection(const ServerConnection&) {
+ServerConnection::ServerConnection(ServerConnection const&) {
 }
 
 ServerConnection& ServerConnection::operator=(ServerConnection const&) {

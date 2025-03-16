@@ -21,9 +21,9 @@ private:
 	std::vector<Location*> const _locations;
 
 public:
-	Router(int port, int host, const std::string& serverName, const std::string& errorPage,
-			long clientMaxBodySize, const std::string& root,
-			const std::vector<Location*>& locations);
+	Router(int port, int host, std::string const& serverName, std::string const& errorPage,
+			long clientMaxBodySize, std::string const& root,
+			std::vector<Location*> const& locations);
 
 	~Router();
 

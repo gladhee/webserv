@@ -36,9 +36,9 @@ public:
 	void addWriteEvent(int fd, Connection* conn);
 
 private:
-	EventLoop(const EventLoop&);
+	EventLoop(EventLoop const&);
 
-	EventLoop& operator=(const EventLoop&);
+	EventLoop& operator=(EventLoop const&);
 };
 
 #endif  // WEBSERV_EVENTLOOP_HPP

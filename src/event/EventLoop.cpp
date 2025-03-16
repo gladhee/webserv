@@ -12,10 +12,10 @@ EventLoop::EventLoop() {
 	}
 }
 
-EventLoop::EventLoop(const EventLoop&) {
+EventLoop::EventLoop(EventLoop const&) {
 }
 
-EventLoop& EventLoop::operator=(const EventLoop&) {
+EventLoop& EventLoop::operator=(EventLoop const&) {
 	return *this;
 }
 

@@ -6,9 +6,9 @@
 StaticLocation::StaticLocation() : _autoindex(false) {
 }
 
-StaticLocation::StaticLocation(const std::string& uri, const std::string& root,
-                               const std::string& index, const std::string& errorPage,
-                               const std::vector<Method>& allowedMethods)
+StaticLocation::StaticLocation(std::string const& uri, std::string const& root,
+                               std::string const& index, std::string const& errorPage,
+                               std::vector<Method> const& allowedMethods)
     : _uri(uri),
       _root(root),
       _index(index),
@@ -28,9 +28,9 @@ StaticLocation& StaticLocation::operator=(StaticLocation const&) {
 StaticLocation::~StaticLocation() {
 }
 
-bool StaticLocation::canHandleRequest(const std::string& uri) const {
+bool StaticLocation::canHandleRequest(std::string const& uri) const {
     return uri == _uri;
 }
-int StaticLocation::handleRequest(const std::string& uri) const {
+int StaticLocation::handleRequest(std::string const& uri) const {
     // TODO: implement
 }
